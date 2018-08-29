@@ -57,5 +57,5 @@ module "client"{
 
 resource "aws_key_pair" "eks-prod-key" {
   key_name   = "${var.nodes_defaults["key_name"]}"
-  public_key = "${var.public_key}"
+  public_key = "${file("/home/dasun/mypublickey")}"
 }
