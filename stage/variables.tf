@@ -78,11 +78,6 @@ variable "access-id" {
 
 }
 
-variable "public_key" {
-  type = "string"
-  default = "${file("/<path-to-public-key>")}"
-
-  }
 variable "access-key"{
   type = "string"
   default = "xxxx"
