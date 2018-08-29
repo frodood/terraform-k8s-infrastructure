@@ -99,7 +99,7 @@ kubectl --kubeconfig /tmp/kubeconfig apply -f web-app-k8s/deployment-manifests/w
 kubectl --kubeconfig /tmp/kubeconfig create -f web-app-k8s/deployment-manifests/service-web-frontend-lb.yaml
 sleep 10
 kubectl --kubeconfig /tmp/kubeconfig get svc -o jsonpath='{.items[*].status.loadBalancer.ingress[*].hostname}' > ELB-FACTS.txt
-#aws s3api create-bucket --bucket elk-state-files-"${var.cluster_defaults["name"]}"
+
 aws s3 cp ELB-FACTS.txt s3://elk-state-files-"${var.cluster_defaults["name"]}"
 
 USERDATA
