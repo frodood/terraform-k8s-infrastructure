@@ -38,7 +38,7 @@ module "nodes" {
 
 }
 
-module "client"{
+module "client" {
   source = "../modules/client"
   vpc-id = "${module.network.vpcid}"
   client_defaults = "${var.client_defaults}"
